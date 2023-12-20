@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import time
 
-st.title("Simple chat")
+st.title("Text2query chat")
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -14,7 +14,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Accept user input
-if prompt := st.chat_input("What is up?"):
+if prompt := st.chat_input("Show name, country, age for all singers ordered by age from the oldest to the youngest."):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     # Display user message in chat message container
@@ -27,9 +27,7 @@ if prompt := st.chat_input("What is up?"):
         full_response = ""
         assistant_response = random.choice(
             [
-                "Hello there! How can I assist you today?",
-                "Hi, human! Is there anything I can help you with?",
-                "Do you need help?",
+                "SELECT name, country, age \n FROM singer \n ORDER BY age DESC;"
             ]
         )
         # Simulate stream of response with milliseconds delay
