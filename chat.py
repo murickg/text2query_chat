@@ -19,7 +19,7 @@ if prompt := st.chat_input("Text question"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     # Display user message in chat message container
     with st.chat_message("user"):
-        st.markdown(promt)
+        st.markdown(prompt)
 
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
