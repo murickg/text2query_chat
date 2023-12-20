@@ -28,7 +28,7 @@ if prompt := st.chat_input("Text question"):
         if promt == 'Show name, country, age for all singers ordered by age from the oldest to the youngest.':
             assistant_response = 'SELECT name, country, age FROM singer ORDER BY age DESC;'
         elif promt == 'What is the average, minimum, and maximum age of all singers from France?':
-            assistant_response = 'SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France';'
+            assistant_response = "SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France';"
         elif promt == 'Show the stadium name and the number of concerts in each stadium.':
             assistant_response = 'SELECT T2.name ,  count(*) FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id GROUP BY T1.stadium_id;'
         # Simulate stream of response with milliseconds delay
