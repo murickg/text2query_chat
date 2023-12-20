@@ -14,12 +14,12 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Accept user input
-if prompt := st.chat_input("Show name, country, age for all singers ordered by age from the oldest to the youngest."):
+if prompt := st.chat_input("Text question"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     # Display user message in chat message container
     with st.chat_message("user"):
-        st.markdown('Text question')
+        st.markdown(promt)
 
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
